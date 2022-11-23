@@ -6,6 +6,7 @@ let highScore = 0,
 
 function hiddenNumGenerator() {
     hiddenNum = Math.trunc(Math.random() * 20 + 1);
+    document.querySelector("body").style.backgroundColor = "#101111";
     //console.log(hiddenNum);
 }
 
@@ -38,6 +39,7 @@ document.querySelector(".check").addEventListener("click", () => {
             document.querySelector(
                 ".message"
             ).textContent = `You guessed it. Hidden number is ${hiddenNum}`;
+            document.querySelector("body").style.backgroundColor = "#33c26f";
 
             if (mark > highScore) {
                 highScore = Number(mark);
@@ -50,6 +52,6 @@ document.querySelector(".check").addEventListener("click", () => {
 document.querySelector(".again").addEventListener("click", function () {
     hiddenNumGenerator();
     mark = 20;
-    document.querySelector(".score").textContent = 20;
+    document.querySelector(".score").textContent = mark;
     document.querySelector(".message").textContent = "Start guessing...";
 });
