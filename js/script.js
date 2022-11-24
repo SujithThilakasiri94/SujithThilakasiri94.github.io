@@ -14,10 +14,13 @@ function hiddenNumGenerator() {
 hiddenNumGenerator();
 
 document.querySelector(".check").addEventListener("click", () => {
+
     const guess = Number(document.querySelector(".guess").value);
+    document.querySelector(".guess").value = "";
 
     if (!guess) {
         document.querySelector(".message").textContent = "Not a Number 🛑";
+
     } else {
         if (hiddenNum != Number(guess)) {
             mark = document.querySelector(".score").textContent - 1;
@@ -41,6 +44,7 @@ document.querySelector(".check").addEventListener("click", () => {
                 ".message"
             ).textContent = `You guessed it. Hidden number is ${hiddenNum}`;
             document.querySelector("body").style.backgroundColor = "#33c26f";
+            document.querySelector(".guess").value = guess;
 
             if (mark > highScore) {
                 highScore = Number(mark);
