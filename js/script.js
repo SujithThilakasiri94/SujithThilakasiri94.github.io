@@ -7,6 +7,7 @@ let highScore = 0,
 function hiddenNumGenerator() {
     hiddenNum = Math.trunc(Math.random() * 20 + 1);
     document.querySelector("body").style.backgroundColor = "#101111";
+    document.querySelector(".guess").value = "";
     //console.log(hiddenNum);
 }
 
