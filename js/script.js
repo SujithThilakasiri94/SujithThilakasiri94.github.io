@@ -30,12 +30,13 @@ document.querySelector(".check").addEventListener("click", () => {
             } else {
                 document.querySelector(".message").textContent = "Your Number too high";
             }
-            if (mark < 0) {
+            if (mark < 1) {
                 mark = 0;
                 document.querySelector(".message").textContent =
                     `Hidden Number was ${hiddenNum}.
                     Your score is 0.Click 'Again' button`;
-                document.querySelector(".score").textContent = 0;
+                document.querySelector(".score").textContent = mark;
+                document.querySelector("body").style.backgroundColor = "#da262f";
             }
         } else {
             document.querySelector(".score").textContent = mark;
